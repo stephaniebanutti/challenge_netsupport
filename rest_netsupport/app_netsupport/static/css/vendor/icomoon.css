@@ -1,0 +1,296 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?u7qtc6');
+  src:  url('fonts/icomoon.eot?u7qtc6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?u7qtc6') format('truetype'),
+    url('fonts/icomoon.woff?u7qtc6') format('woff'),
+    url('fonts/icomoon.svg?u7qtc6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="flaticon-"], [class*="flaticon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-catalog-of-colors:before {
+  content: "\e900";
+}
+.flaticon-oferta:before {
+  content: "\e901";
+}
+.flaticon-task-complete:before {
+  content: "\e902";
+}
+.flaticon-question-mark-inside-a-circle:before {
+  content: "\e903";
+}
+.flaticon-fork-arrow:before {
+  content: "\e904";
+}
+.flaticon-thumbs-up-hand-symbol:before {
+  content: "\e905";
+}
+.flaticon-check-sign-in-a-rounded-black-square:before {
+  content: "\e906";
+}
+.flaticon-keyboard-key-enter:before {
+  content: "\e907";
+}
+.flaticon-delete:before {
+  content: "\e908";
+}
+.flaticon-candidate-for-elections:before {
+  content: "\e909";
+}
+.flaticon-attachment-paperclip-symbol-of-interface:before {
+  content: "\e90a";
+}
+.flaticon-key-silhouette-security-tool-interface-symbol-of-password:before {
+  content: "\e90b";
+}
+.flaticon-searching-magnifying-glass:before {
+  content: "\e90c";
+}
+.flaticon-delete-photo:before {
+  content: "\e90d";
+}
+.flaticon-plus:before {
+  content: "\e90e";
+}
+.flaticon-racing-flag:before {
+  content: "\e90f";
+}
+.flaticon-user-avatar-main-picture:before {
+  content: "\e910";
+}
+.flaticon-validacao:before {
+  content: "\e911";
+}
+.flaticon-dashboard:before {
+  content: "\e912";
+}
+.flaticon-crosshair:before {
+  content: "\e913";
+}
+.flaticon-running:before {
+  content: "\e914";
+}
+.flaticon-teamwork:before {
+  content: "\e915";
+}
+.flaticon-customer:before {
+  content: "\e916";
+}
+.flaticon-logout:before {
+  content: "\e917";
+}
+.flaticon-subtract-sign:before {
+  content: "\e918";
+}
+.flaticon-refresh:before {
+  content: "\e919";
+}
+.flaticon-save:before {
+  content: "\e91a";
+}
+.flaticon-id-card:before {
+  content: "\e91b";
+}
+.flaticon-management:before {
+  content: "\e91c";
+}
+.flaticon-idea:before {
+  content: "\e91d";
+}
+.flaticon-filter:before {
+  content: "\e91e";
+}
+.flaticon-male-telemarketer:before {
+  content: "\e91f";
+}
+.flaticon-supporter:before {
+  content: "\e920";
+}
+.flaticon-bank-building:before {
+  content: "\e921";
+}
+.flaticon-add-pendencias:before {
+  content: "\e922";
+}
+.flaticon-pendencias:before {
+  content: "\e923";
+}
+.flaticon-competencias:before {
+  content: "\e924";
+}
+.flaticon-documentos:before {
+  content: "\e925";
+}
+.flaticon-termos:before {
+  content: "\e926";
+}
+.flaticon-sla-cliente:before {
+  content: "\e927";
+}
+.flaticon-slack:before {
+  content: "\e928";
+}
+.flaticon-regras-e-conduta:before {
+  content: "\e929";
+}
+.flaticon-orientacao-ns:before {
+  content: "\e92a";
+}
+.flaticon-orientacao-cliente:before {
+  content: "\e930";
+}
+.flaticon-ns-academy:before {
+  content: "\e931";
+}
+.flaticon-integracoes:before {
+  content: "\e932";
+}
+.flaticon-flags:before {
+  content: "\e933";
+}
+.flaticon-extrato-doutor:before {
+  content: "\e934";
+}
+.flaticon-relatorio-extrato-doutores:before {
+  content: "\e935";
+}
+.flaticon-relatorio-pagto-doutores:before {
+  content: "\e936";
+}
+.flaticon-relatorio-plan-de-pagor:before {
+  content: "\e937";
+}
+.flaticon-base-de-custos:before {
+  content: "\e938";
+}
+.flaticon-candidato-job:before {
+  content: "\e939";
+}
+.flaticon-cidades-de-atendimento:before {
+  content: "\e93a";
+}
+.flaticon-cliente-do-cliente:before {
+  content: "\e93b";
+}
+.flaticon-dados-supporter:before {
+  content: "\e93c";
+}
+.flaticon-competencias1 .path1:before {
+  content: "\e93d";
+  color: rgb(0, 0, 0);
+}
+.flaticon-competencias1 .path2:before {
+  content: "\e93e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.flaticon-competencias1 .path3:before {
+  content: "\e93f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.flaticon-competencias1 .path4:before {
+  content: "\e940";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.flaticon-competencias1 .path5:before {
+  content: "\e941";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.flaticon-competencias1 .path6:before {
+  content: "\e942";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.flaticon-competencias1 .path7:before {
+  content: "\e943";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.flaticon-competencias1 .path8:before {
+  content: "\e944";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.flaticon-enviar-email:before {
+  content: "\e945";
+}
+.flaticon-relatorios:before {
+  content: "\e946";
+}
+.flaticon-relatorio-capacity:before {
+  content: "\e947";
+}
+.flaticon-relatorio-comparativo-fechamento:before {
+  content: "\e948";
+}
+.flaticon-relatorio-competencia-custo-ciclo:before {
+  content: "\e949";
+}
+.flaticon-relatorio-competencia-custo-periodo:before {
+  content: "\e94a";
+}
+.flaticon-relatorio-jobs-do-supporter:before {
+  content: "\e94b";
+}
+.flaticon-relatorio-previsao-pagamento:before {
+  content: "\e94c";
+}
+.flaticon-relatorio-validacao-faturamento:before {
+  content: "\e94d";
+}
+.flaticon-validacao-fechamentos:before {
+  content: "\e94e";
+}
+.flaticon-relatorio-doutor-por-localidade:before {
+  content: "\e94f";
+}
+.flaticon-relatorio-perfil-demografico:before {
+  content: "\e950";
+}
+.flaticon-relatorio-jobs-por-cliente:before {
+  content: "\e951";
+}
+.flaticon-relatorio-analise-receita:before {
+  content: "\e952";
+}
+.flaticon-relatorio-entregas:before {
+  content: "\e953";
+}
+.flaticon-relatorio-Pagamento-doutores:before {
+  content: "\e954";
+}
+.flaticon-relatorio-DRE:before {
+  content: "\e955";
+}
+.flaticon-novo-analise-de-pendencias:before {
+  content: "\e956";
+}
+.flaticon-novo-atendimento-e-tickets-clientes:before {
+  content: "\e957";
+}
+.flaticon-novo-atendimento-e-tickets-supporter:before {
+  content: "\e958";
+}
+.flaticon-novo-candidato-supporter:before {
+  content: "\e959";
+}

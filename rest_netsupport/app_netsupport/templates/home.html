@@ -1,0 +1,141 @@
+{% load static %}
+
+<html ng-app="portal" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NetSupport - Portal</title>
+    <link rel="icon" href="/static/img/netsupport.ico">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/multi-select.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/select.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/bootstrap-daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/vendor/toogle-switch.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/app.css">
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><script async="" src="https://static.hotjar.com/c/hotjar-1115497.js?sv=6"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/49/12/intl/pt_br/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/49/12/intl/pt_br/util.js"></script></head>
+<body _c_t_common="1">
+
+    <!-- ngInclude: '/views/portal_alerta.html' --><section ng-include="'/views/portal_alerta.html'" ng-show="portal_alerta" class="ng-scope ng-hide"><div class="portal-teste-container ng-scope"><h3 style="text-transform: uppercase" class="ng-binding">PORTAL </h3></div></section>
+
+    <!-- ngInclude: '/views/header.html' --><section ng-include="'/views/header.html'" ng-show="usuario_logado" class="ng-scope ng-hide"><!-- ngIf: !disposivo_movel --><section ng-if="!disposivo_movel" id="header" class="container-fluid ng-scope"><div class="col-lg-2 col-md-3 col-sm-3 col-xs-6"><!--logo--><div class="brand"><img class="img-responsive" src="/static/img/logo.png" alt="Logo Netsupport"></div></div><!--logo--><div class="col-lg-10 col-md-9 col-sm-9 col-xs-6"><!--user info--><div class="pull-right"><div class="row" style="width: 400px;"><div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"><img class="img-responsive img-circle usuario-logado-img" alt="Logo do Usuário"></div><div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><div class="usuario-logado-info"><h5 class="ng-binding"></h5><p class="ng-binding"><!-- ngIf: usuario_logado.perfil == 'doutor' --> <small>Perfil: </small></p><p class="ng-binding"><small>Grupo: </small></p></div></div></div></div></div><!--user info--></section><!-- end ngIf: !disposivo_movel --><!-- ngIf: disposivo_movel --><!-- NOTIFICACOES FLUTUANTES --><div id="notificacoes" class="alert ng-binding ng-scope"></div></section>
+
+    <section class="container-fluid bg-login" ng-class="{'bg-login':!usuario_logado}">
+        <!-- ngInclude: '/views/menu.html' --><div ng-include="'/views/menu.html'" ng-show="usuario_logado" class="ng-scope ng-hide"><!-- ngIf: !disposivo_movel --><section ng-if="!disposivo_movel" class="menu col-lg-2 col-md-3 col-sm-3 col-xs-3 ng-scope"><div class="nav-side-menu"><i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i><div class="menu-list menu-list-desktop" style="height: 540px;"><ul id="menu-content" class="menu-content collapse out"><!-- ngIf: usuario_logado.perfil == 'doutor' --><!-- ngIf: usuario_logado.perfil == 'doutor' --><!-- ngIf: usuario_logado.perfil == 'funcionario' --><!-- ngIf: usuario_logado.perfil != 'doutor' --><li ng-if="usuario_logado.perfil != 'doutor'" class="ng-scope"><a id="menu-dashboard" href="#/dashboard"><i class="flaticon-dashboard"></i> Dashboard</a></li><!-- end ngIf: usuario_logado.perfil != 'doutor' --><!-- ngIf: usuario_logado.perfil != 'cliente' --><li ng-if="usuario_logado.perfil != 'cliente'" class="ng-scope"><a id="menu-ns-academy" target="_blank" href=""><i class="flaticon-ns-academy"></i> NS Academy</a></li><!-- end ngIf: usuario_logado.perfil != 'cliente' --><!-- ngIf: discourse_habilitado && usuario_logado.perfil != 'cliente' --><li ng-if="discourse_habilitado &amp;&amp; usuario_logado.perfil != 'cliente'" class="ng-scope"><a id="menu-ns-community" ng-click="verifica_usuario_discourse()"><i class="flaticon-dashboard"></i> NS Community</a></li><!-- end ngIf: discourse_habilitado && usuario_logado.perfil != 'cliente' --><!-- ngIf: usuario_logado.perfil == 'funcionario' --><!-- ngRepeat: menu in menus --><!-- ngIf: usuario_logado.perfil == 'funcionario' --><li><a id="menu-alterar-senha" href="#/usuario/altera_senha"><i class="flaticon-key-silhouette-security-tool-interface-symbol-of-password"></i> Altera Senha</a></li><!-- ngIf: usuario_logado.perfil == 'doutor' --><li><a id="menu-sair" href="#/logout"><i class="flaticon-logout"></i> Sair</a></li></ul></div></div></section><!-- end ngIf: !disposivo_movel --><!-- ngIf: disposivo_movel --></div>
+        <!-- ngView: --><div ng-view="" class="ng-scope"><section id="principal-login" class="container ng-scope"><div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"><div class="panel-header bg-verde-escuro"><img src="/static/img/logo.png" alt="Logo NetSupport" class="img-responsive logo-ns"></div><div class="bg-verde-medio p-30-all"><h3 class="cor-branca">Utilize a pesquisa abaixo para filtrar</h3>
+            </br>
+            <form class="text-center ng-pristine ng-valid" id="form" name="form" novalidate="">
+                {% csrf_token %}
+                <div class="form-group p-6-v">
+                    <label for="login" class="cor-branca">Quantidade de técnicos que realizaram N atendimentos nos últimos X dias</label> 
+                    <input type="text" class="form-control input-lg ng-pristine ng-valid ng-empty ng-touched" id="qtd_tecnicos">
+                </div>
+                <div class="form-group p-6-v">
+                    <label for="login" class="cor-branca">Quantidade de técnicos que acessaram o sistema nos últimos Y dias</label> 
+                    <input type="text" class="form-control input-lg ng-pristine ng-valid ng-empty ng-touched" id="qtd_sistema">
+                </div>
+                <div class="form-group p-6-v">
+                    <label for="login" class="cor-branca">Quantidade de técnicos com nota média em todos atendimentos > X</label> 
+                    <input type="text" class="form-control input-lg ng-pristine ng-valid ng-empty ng-touched" id="qtd_nota_media">
+                </div>
+                <div class="form-group p-6-v">
+                    <button type="button" class="btn btn-login pull-center" ng-class="{'width-100-pc m-10-b':disposivo_movel}" style="pointer-events: auto;" onclick="search()">PESQUISAR</button>
+                </div>
+                </br>
+                <div class="form-group p-6-v" id="div_download" style="display: none;">
+                    <a id="download" download href="" class="btn btn-login pull-center" ng-class="{'width-100-pc m-10-b':disposivo_movel}" style="pointer-events: auto;">BAIXAR ARQUIVO</a>
+                </div>
+            </form>
+            </div></div></section></div>
+    </section>
+
+    <!-- ngInclude: '/views/footer.html' --><section ng-include="'/views/footer.html'" ng-show="usuario_logado" class="ng-scope ng-hide"><!-- ngIf: !disposivo_movel --><footer ng-if="!disposivo_movel" id="footer" class="container-fluid ng-scope"><div class="col-lg-2 col-md-3 col-sm-3"><!-- ngIf: usuario_logado.grupo == 'Gestor de Demanda' || usuario_logado.grupo == 'Gestor de Operação' --></div><div class="col-lg-10 col-md-9 col-sm-9"><div class="row"><div class="col-lg-5 col-md-5 col-sm-5 hr"><hr class="hr-pequena"></div><div class="col-lg-2 col-md-2 col-sm-2"><p>Notificações</p></div><div class="col-lg-5 col-md-5 col-sm-5 hr"><hr class="hr-pequena"></div><div id="footer-notificacoes" class="col-lg-12 notificacoes m-10-b"><table class="table table-striped"><tbody><!-- ngRepeat: item in historico_operacoes --></tbody></table></div></div></div></footer><!-- end ngIf: !disposivo_movel --><!-- ngIf: disposivo_movel --></section>
+
+    <!-- ngInclude: '/views/modais.html' --><section ng-include="'/views/modais.html'" class="ng-scope"><!-- MODAL DE LOADER --><div id="loader" class="modal fade ng-scope" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Carregando</h4></div><div class="modal-body"><div class="loader"></div></div></div></div></div><!-- MODAL DE MENSAGENS --><div id="mensagem" class="modal fade ng-scope" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header text-center"><i ng-show="mensagem_ico_sucesso" class="fa fa-check mensagem_ico texto-sucesso ng-hide" aria-hidden="true"></i> <i ng-show="mensagem_ico_erro" class="fa fa-times mensagem_ico texto-erro ng-hide" aria-hidden="true"></i><h4 class="modal-title mensagem_status" style="display: inline-block" id="mensagem_status"></h4></div><div class="modal-body"><div id="mensagem_texto"></div><!-- ngInclude: --></div><div id="mensagem_botoes" class="modal-footer" style="text-align: center;"><span id="mensagem_botoes_adicionais"></span> <button type="button" class="btn btn-slim btn-secondary" data-dismiss="modal">Fechar</button></div></div></div></div><!-- MODAL DE NOVAS MENSAGENS --><div id="mensagem_nova" class="modal fade ng-scope" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div id="candidata-mensagem" class="p-50-all p-10-v"><input id="dados_mensagem_nova_status" type="hidden" ng-value="dados_mensagem_nova.status"><div class="modal-header text-center no-border"><img class="img" style="width:70px" alt="Nome e Email"></div><div class="modal-body"><h3 class="text-center ng-binding" ng-class="{'cor-verde-nova': dados_mensagem_nova.status == 'sucesso', 'cor-vermelha': dados_mensagem_nova.status == 'erro'}"></h3><p class="p-30-all text-center ng-binding"> <!-- ngIf: dados_mensagem_nova.duracao_redirecionamento --></p><div class="text-center"><!-- ngIf: dados_mensagem_nova.status == 'erro' && !dados_mensagem_nova.url_destino --> <!-- ngIf: dados_mensagem_nova.status == 'erro' && dados_mensagem_nova.url_destino --><!-- ngIf: dados_mensagem_nova.status == 'sucesso' && !dados_mensagem_nova.duracao_redirecionamento --></div></div></div></div></div></div><!-- MODAL EXIBIDA NO PRIMEIRO LOGIN DE TODOS OS DOUTORES --><div id="doutor_primeiro_login" class="modal fade ng-scope" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h4 class="modal-title ng-binding">Olá Supporter .</h4></div><div class="modal-body" style="text-align: center"><p>Este é seu primeiro login no Portal NetSupport.</p><p>Como parte do processo de cadastro você deve autenticar seu usuário em nossa plataforma de ensino NS Academy, clicando icone abaixo.</p><a href="" target="_blank" title="Login NSAcademy"><i class="flaticon-ns-academy" style="font-size: 100px;"></i></a><p>Assim que tiver se autenticado, confira o material disponível sobre como usar a nossa plataforma e então basta clicar no botão abaixo para validarmos o cadastro e você poderá navegar no Portal.</p></div><div class="modal-footer" style="text-align: center;"><p ng-show="mostra_alerta_nsacademy" class="cor-vermelha ng-hide">Para proseguir é necessário autenticar seu usuário no NS Academy, clicando no ícone ACIMA.</p><button type="button" class="btn btn-slim btn-primary" ng-click="recarrega_dados_usuario_logado(null, true)">Validar Login NS Academy</button></div></div></div></div><!-- MODAL discourse --><div id="discourse" class="modal fade ng-scope" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div id="candidata-mensagem" class="p-50-all p-10-v"><input id="dados_mensagem_nova_status" type="hidden" ng-value="dados_mensagem_nova.status"><div class="modal-header text-center no-border"><img class="img" ng-src="/static/img/icone_mensagem.svg" style="width:70px" alt="Nome e Email" src="/static/img/icone_mensagem.svg"></div><div class="modal-body"><h3 class="text-center cor-verde-nova">Seja bem-vindo à NS Community</h3><div class="p-10-all"><p>Criamos um novo fórum de discussão da NetSupport - NS Community.</p><p>A NS Community é um espaço onde você pode se conectar com outros Supporters e pessoas ligadas a tecnologia para tirar dúvidas, participar de discussões, compartilhar ideias e sugestões e se manter informado sobre o mercado de TI.</p><p>Para acessar nosso fórum, será necessário escolher um nome de usuáiro.</p></div><form name="form" style="text-align: center" class="ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength"><div class="row"><div class="col-lg-3"></div><div class="form-group col-lg-6"><label for="usuario_discourse" title="Usuário que aparecerá nas suas mensagens no NS Community. Deve ser curto, podendo conter apenas letras, números e _ (underscore). Não são permitidos nomes terminados em _(underscore).">Usuário NS Community <i class="fa fa-question-circle"></i></label><div class="input-group input-error" ng-class="{'input-error': form.usuario_discourse.$invalid, 'input-success': form.usuario_discourse.$valid}"><input ng-model="usuario_logado.usuario_discourse" type="text" class="form-control ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" id="usuario_discourse" name="usuario_discourse" placeholder="Nome de Usuário" required="" nome-discourse="" maxlength="20" minlength="2" obj="doutor"> <span class="input-group-addon"><i ng-class="{'fa-times cor-vermelha': form.usuario_discourse.$invalid, 'fa-check cor-verde': form.usuario_discourse.$valid}" class="fa fa-times cor-vermelha" data-toggle="tooltip" data-original-title="- Preenchimento obrigatório"></i></span></div></div></div><button type="button" class="btn btn-slim btn-primary" ng-click="grava_usuario_discourse(usuario_logado.usuario_discourse)" ng-disabled="form.$invalid" disabled="disabled">Registrar</button></form></div></div></div></div></div><!-- MODAL CONFIRMAÇÃO --><div class="modal ng-scope" id="modal_confirmacao" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Confirmação</h4></div><!-- modal-header --><div class="modal-body"><div class="container-fluid text-center"><h5 class="ng-binding"></h5><br><button id="btn_modal_confirmacao_cancela" class="btn btn-danger btn-slim" ng-click="confirmacao(false)">Cancelar</button> <button id="btn_modal_confirmacao_confirma" class="btn btn-success btn-slim" ng-click="confirmacao(true)">Confirmar</button></div></div></div></div></div></section>
+
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/static/js/libs/angular-1.5.8.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/angular-route-1.5.8.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/angular-filter.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/ng-file-upload-all.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/angularjs-animate-1.5.8.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/palette.js"></script>
+
+    <script type="text/javascript" src="/static/js/libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/multi-select.js"></script>
+    <script type="text/javascript" src="/static/js/libs/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/select.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/moment-2.22.2-with-locales.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/moment-duration-format.js"></script>
+    <script type="text/javascript" src="/static/js/libs/chart-2.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/bootstrap-daterangepicker.js"></script>
+    <script type="text/javascript" src="/static/js/libs/angular-daterangepicker.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/re-tree.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/ua-device-detector.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/ng-device-detector.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/lodash-4.17.11.min.js"></script>
+
+    <!-- <script type="text/javascript" src="/static/js/trackers.js"></script> -->
+    <!-- Facebook Pixel Code -->
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=812655602195141&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Linkedin Pixel Code -->
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=1162610&fmt=gif
+        https://dc.ads.linkedin.com/collect/?pid=1162610&fmt=gif" />
+    </noscript>
+    <!-- End Linkedin Pixel Code -->
+
+    <!-- todo JS portal -->
+
+ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb14nrVdCZh_uBI-wGkjjmB0ypHS4YInY" defer=""></script>
+    <script src="/static/js/libs/markerclusterer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.min.js"></script>
+  
+
+
+<script type="text/javascript">
+function search(){
+    var formdata = {
+        "qtd_tecnicos_atendimentos": $("#qtd_tecnicos").val(),
+        "qtd_tecnicos_acesso_sistema": $("#qtd_sistema").val(),
+        "nota_tecnicos": $("#qtd_nota_media").val(),
+    }
+    
+    $.ajax({
+        url: "{% url 'TechniciansByCity' %}",
+        type: "POST",
+        dataType: "JSON",
+        headers: {'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()},
+        mode: 'same-origin',
+        data: formdata,
+        success: function(response) {
+            console.log(response);
+            var url = response["data"];
+            if(response["response"] == false){
+                $("#div_download").hide();
+                alert(response["data"]);
+            } else {
+                $("#div_download").show();
+                $("#download").attr("href", url);
+
+                alert("Pesquisa concluida com sucesso. Clique em baixar arquivo.");
+            }
+        },
+        error: function (request, status, error) {
+            sucess(error);
+        }
+    });
+}
+</script>
+</body>
+</html>
